@@ -40,3 +40,23 @@ function completeMission(button) {
 button.dataset.done = "true";
   updateUI();
 }
+function addMission() {
+    let input = document.getElementById("newMission");
+    let missionText = input.value;
+
+    if (missionText.trim() === "") return;
+
+    let missionDiv = document.createElement("div");
+    missionDiv.className = "mission";
+
+    missionDiv.innerHTML = `
+        <h3>${missionText}</h3>
+        <button class="complete-btn" onclick="completeMission(this)">
+            Complete
+        </button>
+    `;
+
+    document.getElementById("customMissions").appendChild(missionDiv);
+
+    input.value = "";
+}
