@@ -62,7 +62,8 @@ missions.push(missionText);
 localStorage.setItem("missions", JSON.stringify(missions));
     input.value = "";
   updateUI();
-}let savedMissions = JSON.parse(localStorage.getItem("missions")) || [];
+}
+let savedMissions = JSON.parse(localStorage.getItem("missions")) || [];
 
 savedMissions.forEach(missionText => {
     let missionDiv = document.createElement("div");
