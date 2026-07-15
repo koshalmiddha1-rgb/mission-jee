@@ -37,6 +37,6 @@ function completeMission(button) {
 
   button.innerText = "Completed ✅";
   button.disabled = true;
-
+button.dataset.done = "true";
   updateUI();
 }
