@@ -16,9 +16,11 @@ function updateUI() {
 
   localStorage.setItem("xp", xp);
   localStorage.setItem("coins", coins);
-  localStorage.setItem("level", level);
-function completeMission(button) {
+  
+localStorage.setItem("level", level);
+}
 
+function completeMission(button) {
   if (button.disabled) return;
 
   xp += 20;
