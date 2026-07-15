@@ -1,19 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mission JEE</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission JEE</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<div class="container">
 
 <h1>🎮 Mission JEE</h1>
 
-<p>Welcome, Koshal!</p>
+<div class="stats">
 
-<button>Start Mission</button>
+<div class="card">
+<h2>Level</h2>
+<span id="level">1</span>
+</div>
+
+<div class="card">
+<h2>XP</h2>
+<span id="xp">0</span>
+</div>
+
+<div class="card">
+<h2>Coins</h2>
+<span id="coins">0</span>
+</div>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="missions">
+
+<div class="mission">
+<h3>📘 Complete Chemistry Lecture</h3>
+<button class="complete-btn" onclick="completeMission()">Complete</button>
+</div>
+
+<div class="mission">
+<h3>📗 Solve 20 Maths Questions</h3>
+<button class="complete-btn" onclick="completeMission()">Complete</button>
+</div>
+
+<div class="mission">
+<h3>⚡ Revise Physics Formula</h3>
+<button class="complete-btn" onclick="completeMission()">Complete</button>
+</div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
