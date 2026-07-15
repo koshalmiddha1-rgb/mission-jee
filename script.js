@@ -38,6 +38,15 @@ function completeMission(button) {
   button.innerText = "Completed ✅";
   button.disabled = true;
 button.dataset.done = "true";
+  const achievements = document.getElementById("achievements");
+
+if (level >= 5) {
+    achievements.innerHTML = "🏆 Reached Level 5";
+}
+
+if (coins >= 100) {
+    achievements.innerHTML += "<br>💰 Earned 100 Coins";
+}
   updateUI();
 }
 function addMission() {
