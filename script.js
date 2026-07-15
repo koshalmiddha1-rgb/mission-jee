@@ -11,6 +11,7 @@ function updateUI() {
   xpText.textContent = xp;
   coinsText.textContent = coins;
   levelText.textContent = level;
+  document.getElementById("streak").textContent = streak + " Days";
 missionButtons.forEach(btn => {
     if (btn.dataset.done === "true") {
         btn.innerText = "Completed ✅";
@@ -30,6 +31,8 @@ function completeMission(button) {
 
   xp += 20;
   coins += 15;
+  streak++;
+localStorage.setItem("streak", streak);
 
   if (xp >= level * 100) {
     level++;
