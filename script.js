@@ -62,4 +62,20 @@ missions.push(missionText);
 localStorage.setItem("missions", JSON.stringify(missions));
     input.value = "";
   updateUI();
-}
+}let savedMissions = JSON.parse(localStorage.getItem("missions")) || [];
+
+savedMissions.forEach(missionText => {
+    let missionDiv = document.createElement("div");
+    missionDiv.className = "mission";
+
+    missionDiv.innerHTML = `
+        <h3>${missionText}</h3>
+        <button class="complete-btn" onclick="completeMission(this)">
+            Complete
+        </button>
+    `;
+
+    document.getElementById("customMissions").appendChild(missionDiv);
+});
+
+updateUI();
