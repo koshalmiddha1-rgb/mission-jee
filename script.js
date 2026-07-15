@@ -1,36 +1,31 @@
-// Mission JEE Basic Script
+let xp = Number(localStorage.getItem("xp")) || 0;
+let coins = Number(localStorage.getItem("coins")) || 0;
+let level = Number(localStorage.getItem("level")) || 1;
 
-let xp = localStorage.getItem("xp") || 0;
-let coins = localStorage.getItem("coins") || 0;
-let level = localStorage.getItem("level") || 1;
-
-function saveData() {
-  localStorage.setItem("xp", xp);
-  localStorage.setItem("coins", coins);
-  localStorage.setItem("level", level);
-}
+updateUI();
 
 function completeMission() {
-  xp = Number(xp) + 50;
-  coins = Number(coins) + 20;
+    xp += 20;
+    coins += 10;
 
-  if (xp >= level * 100) {
-    level++;
-    alert("🎉 Level Up! You reached Level " + level);
-  }
+    if (xp >= level * 100) {
+        xp = 0;
+        level++;
+        alert("🎉 Level Up! You reached Level " + level);
+    }
 
-  saveData();
-  updateUI();
+    saveData();
+    updateUI();
+}
+
+function saveData() {
+    localStorage.setItem("xp", xp);
+    localStorage.setItem("coins", coins);
+    localStorage.setItem("level", level);
 }
 
 function updateUI() {
-  const xpEl = document.getElementById("xp");
-  const coinEl = document.getElementById("coins");
-  const levelEl = document.getElementById("level");
-
-  if (xpEl) xpEl.innerText = xp;
-  if (coinEl) coinEl.innerText = coins;
-  if (levelEl) levelEl.innerText = level;
+    document.getElementById("xp").innerText = xp;
+    document.getElementById("coins").innerText = coins;
+    document.getElementById("level").innerText = level;
 }
-
-window.onload = updateUI;
