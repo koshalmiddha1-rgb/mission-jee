@@ -57,6 +57,9 @@ function addMission() {
     `;
 
     document.getElementById("customMissions").appendChild(missionDiv);
-
+let missions = JSON.parse(localStorage.getItem("missions")) || [];
+missions.push(missionText);
+localStorage.setItem("missions", JSON.stringify(missions));
     input.value = "";
+  updateUI();
 }
